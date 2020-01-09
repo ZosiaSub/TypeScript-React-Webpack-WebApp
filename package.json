@@ -4,8 +4,9 @@
   "description": "Small web application using React.js, Redux, Redux Saga, TypeScript, Webpack",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development --watch",
-    "prod": "webpack --mode production",
+    "webpack-dev-server": "webpack-dev-server",
+    "dev": "webpack-dev-server --env.mode development --watch",
+    "prod": "webpack --env.mode production",
     "dev:debug": "debug -- --mode development",
     "prod:debug": "debug -- --mode production",
     "debug": "node --inspect --inspect-brk ./node_modules/webpack/bin/webpack.js"
@@ -21,17 +22,20 @@
   },
   "homepage": "https://github.com/ZosiaSub/TypeScript-React-Webpack-WebApp#readme",
   "devDependencies": {
+    "@babel/core": "^7.7.7",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^3.2.0",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.4",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
     "react": "^16.12.0",

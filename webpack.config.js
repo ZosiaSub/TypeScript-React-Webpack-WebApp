@@ -1,35 +1,35 @@
-module.exports = {
-    mode: "development",
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const modeConfig = env => require('./build-utils/webpack.${env')(env);
 
-    // Enable sourcemaps for debugging webpack's output.
-    devtool: "source-map",
+module.exports = (env) => {
+    return {
+        entry: "index.tsx",
+        output: {
+            filename: "bundle.js"
+        },
+        mode: env.mode,
 
-    resolve: {
-        // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".ts", ".tsx"]
-    },
+        // Enable sourcemaps for debugging webpack's output.
+        devtool: "source-map",
 
-    module: {
-        rules: [
-            {
-                test: /\.ts(x?)$/,
-                // exclude: /node_modules/,
-                use: [
-                    {
-                        loader: "ts-loader"
-                    }
-                ]
-            },
-            { test: /\.js(x?)$/, use: "babel-loader" },
-            {
-                enforce: "pre",
-                test: /\.js$/,
-                loader: "source-map-loader"
-            }
-        ],
-    },
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
+        resolve: {
+            modules: ["src", "node_modules"],
+            // Add '.ts' and '.tsx' as resolvable extensions.
+            extensions: [".ts", ".tsx", ".js"]
+        },
+
+        module: {
+            rules: [
+                { test: /\.ts(x?)$/, use: "ts-loader" },
+                { test: /\.js(x?)$/, use: "babel-loader" },
+                // {
+                //     enforce: "pre",
+                //     test: /\.js$/,
+                //     loader: "source-map-loader"
+                // }
+            ],
+        },
+
+        plugins: [new HtmlWebpackPlugin({ template: './src/index.html', filename: "index.html" })]
     }
 };
