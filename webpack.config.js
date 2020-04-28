@@ -22,11 +22,14 @@ module.exports = (env) => {
             rules: [
                 { test: /\.ts(x?)$/, use: "ts-loader" },
                 { test: /\.js(x?)$/, use: "babel-loader" },
-                // {
-                //     enforce: "pre",
-                //     test: /\.js$/,
-                //     loader: "source-map-loader"
-                // }
+                {
+                    test: /\.(png|jpe?g|gif)$/i,
+                    use: [
+                      {
+                        loader: 'file-loader',
+                      },
+                    ],
+                },
             ],
         },
 
