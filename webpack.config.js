@@ -1,11 +1,14 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const modeConfig = env => require('./build-utils/webpack.${env')(env);
+const path = require('path');
 
 module.exports = (env) => {
     return {
         entry: "index.tsx",
         output: {
-            filename: "bundle.js"
+            path: path.join(__dirname, 'dist'),
+            filename: "bundle.js",
+            publicPath:'/dist'
         },
         mode: env.mode,
 

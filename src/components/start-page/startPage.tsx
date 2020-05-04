@@ -1,15 +1,17 @@
 import React from 'react';
 import { Header, Logobox, Logo, StartButton, StartText, StartTextBox, MainBox, MainWrapper } from './startPage.sc.js';
+import * as logoSrc from '../../sources/images/logo_transparent.png';
 
-const logoSrc = require('../../sources/images/logo_transparent.png');
 
+export interface StartProps { 
+    compiler: string; 
+    framework: string; 
+}
 
-export interface StartProps { compiler: string; framework: string; }
-
-// 'HelloProps' describes the shape of props.
+// 'StartProps' describes the shape of props.
 // State is never set so we use the '{}' type.
 export class StartPage extends React.Component<StartProps, {}> {
-    render() {
+    render(): JSX.Element {
         return (
             <MainWrapper>
                 <Logobox>

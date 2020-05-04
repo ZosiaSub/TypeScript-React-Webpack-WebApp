@@ -9,7 +9,9 @@
     "prod": "webpack --env.mode production",
     "dev:debug": "debug -- --mode development",
     "prod:debug": "debug -- --mode production",
-    "debug": "node --inspect --inspect-brk ./node_modules/webpack/bin/webpack.js"
+    "debug": "node --inspect --inspect-brk ./node_modules/webpack/bin/webpack.js",
+    "lint": "eslint . --ext .tsx",
+    "lint-fix": "eslint . --ext .tsx --fix"
   },
   "repository": {
     "type": "git",
@@ -27,10 +29,15 @@
     "@types/react-dom": "^16.9.4",
     "@types/react-router": "^5.1.7",
     "@types/styled-components": "^5.1.0",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
+    "file-loader": "^6.0.0",
     "html-webpack-plugin": "^3.2.0",
     "source-map-loader": "^0.2.4",
     "styled-components": "^5.1.0",
