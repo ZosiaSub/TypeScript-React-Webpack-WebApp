@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header, Logobox, Logo, StartButton, StartText, StartTextBox, MainBox, MainWrapper } from './startPage.sc.js';
 import * as logoSrc from '../../sources/images/logo_transparent.png';
+import { Link } from 'react-router-dom';
 
 
 export interface StartProps { 
@@ -22,7 +23,10 @@ export class StartPage extends React.Component<StartProps, {}> {
                         <StartTextBox>
                             <StartText>WITAJ</StartText>
                         </StartTextBox>
-                        <StartButton onClick={() => alert('DUPA')}>START</StartButton>
+                        <Link to='/home'>
+                            <StartButton onClick={() => alert('DUPA')}>START</StartButton>
+                        </Link>
+                        
                     </MainBox>
                 </Header>
             </MainWrapper>

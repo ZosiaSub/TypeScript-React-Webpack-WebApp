@@ -8,7 +8,7 @@ module.exports = (env) => {
         output: {
             path: path.join(__dirname, 'dist'),
             filename: "bundle.js",
-            publicPath:'/dist'
+            publicPath:'/'
         },
         mode: env.mode,
 

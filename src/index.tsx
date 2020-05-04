@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { StartPage } from './components/start-page/startPage';
+import App from './App';
 
 ReactDOM.render(
-    <StartPage compiler="TypeScript" framework="React" />,
-    document.getElementById("root")
+    <App />, document.getElementById("root")
 );
