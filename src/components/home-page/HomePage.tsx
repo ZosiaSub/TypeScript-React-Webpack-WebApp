@@ -1,6 +1,8 @@
 import React from 'react';
-import { MainWrapper, Logobox, Logo } from '../start-page/startPage.sc.js';
+import { MainWrapper } from '../start-page/startPage.sc.js';
+import { Logobox, Logo } from './HomePage.sc.js';
 import * as logoSrc from '../../sources/images/logo_transparent.png';
+import AppBar from './AppBar';
 
 
 export interface HomeProps { 
@@ -15,6 +17,7 @@ export class HomePage extends React.Component<HomeProps, {}> {
                 <Logobox>
                         <Logo src={logoSrc.default} alt='logo'></Logo>
                 </Logobox>
+                <AppBar />
             </MainWrapper>
         )      
         

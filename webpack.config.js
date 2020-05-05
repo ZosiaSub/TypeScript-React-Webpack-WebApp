@@ -8,17 +8,25 @@ module.exports = (env) => {
         output: {
             path: path.join(__dirname, 'dist'),
             filename: "bundle.js",
-            publicPath:'/'
+            publicPath: '/'
         },
         mode: env.mode,
 
         // Enable sourcemaps for debugging webpack's output.
         devtool: "source-map",
+        devServer: {
+            contentBase: path.join(__dirname, 'dist'),
+            port: 8080
+        },
 
         resolve: {
             modules: ["src", "node_modules"],
             // Add '.ts' and '.tsx' as resolvable extensions.
-            extensions: [".ts", ".tsx", ".js"]
+            extensions: [".ts", ".tsx", ".js"],
+            alias: {
+                "@material-ui/styles": path.resolve(__dirname, "node_modules", "@material-ui/styles")
+            }
+            
         },
 
         module: {

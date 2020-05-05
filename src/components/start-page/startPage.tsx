@@ -23,10 +23,7 @@ export class StartPage extends React.Component<StartProps, {}> {
                         <StartTextBox>
                             <StartText>WITAJ</StartText>
                         </StartTextBox>
-                        <Link to='/home'>
-                            <StartButton onClick={() => alert('DUPA')}>START</StartButton>
-                        </Link>
-                        
+                            <StartButton to='/home'>START</StartButton>
                     </MainBox>
                 </Header>
             </MainWrapper>

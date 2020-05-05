@@ -1,14 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import img from '../../sources/images/IMG_6747.jpg';
-
-const littleGlow = keyframes`
-    0% {
-            opacity: -1;
-        }
-    100% {
-            opacity: 1;
-    }
-`
+import { littleGlow } from '../animations/animations.sc';
+import { Link } from 'react-router-dom';
 
 const moveInLeft = keyframes`
     0% {
@@ -25,22 +18,6 @@ const moveInLeft = keyframes`
         transform: translate(0);
     }
 `
-    
-const moveInRight = keyframes`
-    0% {
-        opacity: 0;
-        transform: translateX(200px);
-    }
-
-    80% {
-        transform: translateX(-10px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-`
 export const MainWrapper = styled.div`
     margin: 0;
     padding: 0;
@@ -50,7 +27,7 @@ export const MainWrapper = styled.div`
     font-size: 16px;
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 10px;
 `
 
 const moveInBottom = keyframes`
@@ -121,13 +98,13 @@ export const StartText = styled.span`
     animation: ${moveInLeft} 2s ease-out;
 `
 
-export const StartButton = styled.a`
+export const StartButton = styled(Link)`
     &:link; 
     &:hover {
         transform: translateY(-3px);
         box-shadow: 0 10px 20px rgba(0,0,0,.2);
     }
-
+    text-decoration: none;
     background-color: rgba(226, 221, 221, .3);
     color: #fff;
     border-radius: 28px;

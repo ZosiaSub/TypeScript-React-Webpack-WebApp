@@ -3,10 +3,13 @@
     "outDir": "./dist/",
     "rootDir": "src",    
     "sourceMap": true,
-    "noImplicitAny": false,
     "module": "commonjs",
     "esModuleInterop": true,
     "target": "es6",
     "jsx": "react",
+    "lib": ["es6", "dom"],
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "strictNullChecks": true
   }
 }
