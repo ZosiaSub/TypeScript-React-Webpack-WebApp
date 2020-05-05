@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Logo } from './HomePage.sc.js';
+import { Logo, Logobox } from './HomePage.sc.js';
 import * as logoSrc from '../../sources/images/logo_transparent.png';
 
 const useStyles = makeStyles((theme) => ({
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   title: {
-    flexGrow: 1,
+    flexGrow: 2,
   },
 }));
 
@@ -25,12 +25,14 @@ export default function ButtonAppBar(): JSX.Element {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" color='transparent'>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-            <Logo src={logoSrc.default} alt='logo'/>
+          <Logobox>
+              <Logo src={logoSrc.default} alt='logo' className={classes.title}/>
+          </Logobox>
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Header, Logobox, Logo, StartButton, StartText, StartTextBox, MainBox, MainWrapper } from './startPage.sc.js';
 import * as logoSrc from '../../sources/images/logo_transparent.png';
-import { Link } from 'react-router-dom';
 
 
 export interface StartProps { 
