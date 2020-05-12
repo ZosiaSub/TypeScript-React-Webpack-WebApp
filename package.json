@@ -11,6 +11,7 @@
     "prod:debug": "debug -- --mode production",
     "debug": "node --inspect --inspect-brk ./node_modules/webpack/bin/webpack.js",
     "lint": "eslint . --ext .tsx",
+    "lint-formater": "eslint --format node_modules/eslint-friendly-formatter src/**/*.tsx",
     "lint-fix": "eslint . --ext .tsx --fix"
   },
   "repository": {
@@ -38,6 +39,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "eslint": "^6.8.0",
+    "eslint-friendly-formatter": "^4.0.1",
     "eslint-plugin-react": "^7.19.0",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^3.2.0",
