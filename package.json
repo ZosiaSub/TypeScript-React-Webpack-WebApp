@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "webpack-dev-server": "webpack-dev-server",
-    "dev": "webpack-dev-server --env.mode development --watch",
+    "server": "nodemon ./server/server.js",
+    "dev": "webpack-dev-server --env.mode development --watch --open",
     "prod": "webpack --env.mode production",
     "dev:debug": "debug -- --mode development",
     "prod:debug": "debug -- --mode production",
@@ -55,15 +56,20 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
-    "apollo-server": "^2.13.1",
+    "apollo-boost": "^0.4.8",
+    "apollo-server-express": "^2.13.1",
+    "express": "^4.17.1",
     "graphql": "^15.0.0",
     "graphql-tools": "^5.0.0",
     "mongoose": "^5.9.13",
+    "nodemon": "^2.0.3",
     "react": "^16.12.0",
+    "react-apollo": "^3.1.5",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2"
   },
   "engines": {
     "node": ">=8.10.0"
-  }
+  },
+  "proxy": "http://localhost:8080"
 }

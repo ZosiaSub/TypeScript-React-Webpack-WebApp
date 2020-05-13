@@ -8,8 +8,6 @@ export interface StartProps {
     framework: string; 
 }
 
-// 'StartProps' describes the shape of props.
-// State is never set so we use the '{}' type.
 export class StartPage extends React.Component<StartProps, {}> {
     render(): JSX.Element {
         return (
