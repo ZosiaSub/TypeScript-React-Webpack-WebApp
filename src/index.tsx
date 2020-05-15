@@ -8,12 +8,12 @@ import App from './App';
 import theme from './theme';
 
 const Root = () => (
-   <ApolloProvider client={client}>
-      <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
-   </ThemeProvider>
-   </ApolloProvider>  
+   <ThemeProvider theme={theme}>
+   <CssBaseline />
+      <ApolloProvider client={client}>
+           <App />
+      </ApolloProvider>
+   </ThemeProvider> 
 )
 
 ReactDOM.render(<Root />, document.getElementById("root"));

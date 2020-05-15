@@ -69,7 +69,7 @@ export const Logobox = styled.div`
     left: 40px;
 `
 
-export const Logo =styled.img`
+export const Logo = styled.img`
     max-height: 180px;
     :hover {
     animation: ${littleGlow} 1s ease-out;

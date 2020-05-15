@@ -13,3 +13,13 @@ export const Logo = styled.img`
     animation: ${littleGlow} 1s ease-out;
     }
 `
+
+export const HomeContainer = styled.div`
+    padding: 20px 30px;
+    display: flex;
+    align-content: space-between;
+`
+
+export const FlexContainer = styled.div`
+    display: block;
+`

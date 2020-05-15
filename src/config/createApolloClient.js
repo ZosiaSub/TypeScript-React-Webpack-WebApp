@@ -19,10 +19,12 @@ const query = gql`
     posts {
       title,
       content,
+      _id,
     }
   }
 `
+console.log()
 client.query({query})
-  .then(result => console.log('DUPA', result))
+  .then(result => console.log(result))
 
 export default client;
