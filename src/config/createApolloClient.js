@@ -20,6 +20,10 @@ const query = gql`
       title,
       content,
       _id,
+      img {
+        data,
+        contentType
+      }
     }
   }
 `
