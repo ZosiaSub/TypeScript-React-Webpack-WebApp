@@ -8,6 +8,19 @@ import {
 } from '@material-ui/core/';
 import CardContent from './CardContent';
 
+interface CardProps {
+  key: string; 
+  cardData: {
+    _id: string;
+    title: string;
+    content: string;
+    img: {
+      data: string;
+      constentType: string;
+    };
+  };
+}
+
 
 const useStyles = makeStyles({
   root: {
@@ -19,13 +32,13 @@ const useStyles = makeStyles({
   },
 });
 
-export default function CardComponent(): JSX.Element {
+export default function CardComponent(props: CardProps): JSX.Element {
   const classes = useStyles();
 
   return (
     <Grid item xs={12} sm={6} md={3}>
         <Card className={classes.root}>
-        <CardContent />
+        <CardContent cardData={props.cardData} />
         <CardActions>
           <Button size="small" color="primary">
             Udostępnij

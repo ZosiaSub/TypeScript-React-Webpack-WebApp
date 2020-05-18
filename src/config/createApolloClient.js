@@ -7,28 +7,10 @@ const cache = new InMemoryCache();
 const link = new HttpLink({
     uri: 'http://localhost:3000/graphql'
 })
-console.log('URI', link)
 
 const client = new ApolloClient({
   link,
   cache
 });
-
-const query = gql`
-  {
-    posts {
-      title,
-      content,
-      _id,
-      img {
-        data,
-        contentType
-      }
-    }
-  }
-`
-console.log()
-client.query({query})
-  .then(result => console.log(result))
 
 export default client;

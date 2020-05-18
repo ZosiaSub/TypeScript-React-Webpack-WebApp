@@ -4,7 +4,7 @@ const postSchema = new Schema({
   title: String,
   content: String,
   img: {
-    data: Buffer,
+    data: String,
     contentType: String
   }
 });
