@@ -1,2 +1,9 @@
 # TypeScript-React-Webpack-WebApp
-Small web application using React.js, Redux, Redux Saga, TypeScript, Webpack (configuration from scratch)
+Small web application (configuration from scratch) using:
+- React.js 
+- React-Router-DOM
+- TypeScript
+- Webpack 
+- Apollo Server
+- GraphQl
+- MongoDb
