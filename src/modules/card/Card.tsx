@@ -13,7 +13,6 @@ interface CardProps {
   cardData: {
     _id: string;
     title: string;
-    content: string;
     img: {
       data: string;
       constentType: string;
@@ -44,7 +43,7 @@ export default function CardComponent(props: CardProps): JSX.Element {
             Udostępnij
           </Button>
           <Button size="small" color="primary">
-            Więcej
+            Zagraj
           </Button>
         </CardActions>
       </Card>

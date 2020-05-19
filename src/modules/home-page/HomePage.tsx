@@ -1,60 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { MainWrapper } from '../../modules/start-page/startPage.sc.js';
 import AppBar from './AppBar';
 import Card from '../card/Card';
-import { HomeContainer } from '../home-page/HomePage.sc.js';
-import { Grid, CircularProgress } from '@material-ui/core/';
 import client from '../../config/createApolloClient.js';
+import MemoriesContext from '../../Context/MemoriesContext';
+import HomeContainer from './HomeContainer';
 import gql from 'graphql-tag';
 import { useQuery, useMutation } from '@apollo/react-hooks';
-
-const GET_POSTS = gql`
-  {
-    posts {
-      _id
-      title
-      content
-      img {
-        data
-        contentType
-      }
-    }
-  }
-`
+import { GET_POSTS } from '../../GraphQl/memories';
 
 function HomePage(): JSX.Element {
     const [cardData, setCardData] = useState('');
-    const { loading, error, data } = useQuery(GET_POSTS);
    
-    const cards = () => {
-        // if (error) return <ErrorMessage />;
-        if (data.posts) {
-            console.log(data.posts)
-            return (
-                data.posts.map(post => (
-                    <Card cardData={post} key={post._id}/>
-                ))
-            )
+    const { loading, error, data } = useQuery(GET_POSTS);
+    const cars = data ? data.posts : [];
+    const memoriesValue = {
+        farmCars: {
+            data: cars,
+            loading,
+            error        
         }
-    }
-
-    const content = loading ? (<CircularProgress />) : cards();
+    };
 
     return (
      <MainWrapper>
-                <AppBar />
-                <HomeContainer>
-                    <Grid
-                        container
-                        spacing={3}
-                        direction="row"
-                        justify="center"
-                    >
-                        {content}     
-                    </Grid>      
-                </HomeContainer>                   
-            </MainWrapper>       
-        )       
+         <MemoriesContext.Provider value={memoriesValue}>
+             <AppBar />
+             <HomeContainer />     
+        </MemoriesContext.Provider>  
+    </MainWrapper>       
+    )       
 }
 
 export default HomePage;

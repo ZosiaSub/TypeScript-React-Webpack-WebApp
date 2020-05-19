@@ -14,7 +14,7 @@ export const Logo = styled.img`
     }
 `
 
-export const HomeContainer = styled.div`
+export const HomeContainerStyled = styled.div`
     padding: 20px 30px;
     display: flex;
     align-content: space-between;

@@ -16,7 +16,6 @@ interface CardProps {
   cardData: {
     _id: string;
     title: string;
-    content: string;
     img: {
       data: string;
       constentType: string;
@@ -35,9 +34,9 @@ export default function CardContentComponent(props: CardProps): JSX.Element {
               <Typography gutterBottom variant="h5" component="h2">
                 {props.cardData.title}
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
+              {/* <Typography variant="body2" color="textSecondary" component="p">
                 {props.cardData.content}
-              </Typography>
+              </Typography> */}
             </CardContent>
           </CardActionArea> 
     );
