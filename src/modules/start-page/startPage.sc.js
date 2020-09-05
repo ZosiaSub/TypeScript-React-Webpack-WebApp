@@ -1,23 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 import img from '../../sources/images/IMG_6747.jpg';
-import { littleGlow } from '../animations/animations.sc';
+import { littleGlow, moveInLeft } from '../animations/animations.sc';
 import { Link } from 'react-router-dom';
 
-const moveInLeft = keyframes`
-    0% {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-
-    80% {
-        transform: translateX(10px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-`
 export const MainWrapper = styled.div`
     margin: 0;
     padding: 0;

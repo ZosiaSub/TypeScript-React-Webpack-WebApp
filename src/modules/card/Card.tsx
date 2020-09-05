@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { 
   Grid, 
@@ -7,6 +7,8 @@ import {
   Button, 
 } from '@material-ui/core/';
 import CardContent from './CardContent';
+import { Link } from 'react-router-dom';
+import MemoriesContext from '../../Context/MemoriesContext';
 
 interface CardProps {
   key: string; 
@@ -33,6 +35,8 @@ const useStyles = makeStyles({
 
 export default function CardComponent(props: CardProps): JSX.Element {
   const classes = useStyles();
+  const farmCarsData = useContext(MemoriesContext);
+  const farmCars = farmCarsData.data;
 
   return (
     <Grid item xs={12} sm={6} md={3}>
@@ -42,9 +46,16 @@ export default function CardComponent(props: CardProps): JSX.Element {
           <Button size="small" color="primary">
             Udostępnij
           </Button>
-          <Button size="small" color="primary">
+          <Link to={{
+              pathname: '/memoryGame',
+              state: {
+                cars: farmCars
+              }
+              }} >
+            <Button size="small" color="primary">
             Zagraj
-          </Button>
+            </Button> 
+          </Link>
         </CardActions>
       </Card>
     </Grid>    

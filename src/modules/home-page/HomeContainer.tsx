@@ -14,11 +14,12 @@ interface Car {
 }
 
  function HomeContainer() :JSX.Element {
-    const { farmCars } = useContext(MemoriesContext);
-    console.log(farmCars);
-    const { loading, data } = farmCars;
+    const carsData = useContext(MemoriesContext);
+    const { loading, data } = carsData.farmCars;
+
+    console.log(data)
     const cards = () => {
-        if (data.length) {
+        if (data && data.length) {
             return (
                 data.map((car: Car) => (
                     <Card cardData={car} key={car._id} />

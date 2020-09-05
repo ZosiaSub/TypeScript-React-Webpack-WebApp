@@ -9,13 +9,22 @@ import gql from 'graphql-tag';
 import { useQuery, useMutation } from '@apollo/react-hooks';
 import { GET_POSTS } from '../../GraphQl/memories';
 
+interface Car {
+    _id: string;
+    title: string;
+    img: {
+        data: string;
+        constentType: string;
+    };
+}
+
 function HomePage(): JSX.Element {
     const [cardData, setCardData] = useState('');
    
     const { loading, error, data } = useQuery(GET_POSTS);
-    const cars = data ? data.posts : [];
+    const cars: [Car] = data ? data.posts : [];
     const memoriesValue = {
-        farmCars: {
+        farmCars:  {
             data: cars,
             loading,
             error        
