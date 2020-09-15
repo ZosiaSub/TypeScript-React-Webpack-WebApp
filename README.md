@@ -1,4 +1,4 @@
-# TypeScript-React-Webpack-WebApp
+# TypeScript-React-GraphQl-WebApp
 Small web application (configuration from scratch) using:
 - React.js 
 - React-Router-DOM
