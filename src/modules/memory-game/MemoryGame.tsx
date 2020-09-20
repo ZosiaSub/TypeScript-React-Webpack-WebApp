@@ -25,7 +25,6 @@ interface GameProps {
 
 
 function MemoryGame(props: GameProps) :JSX.Element {
-    console.log(props)
     return (
         <MainWrapper>
             <Link to='/' params={{ data: 'test coś tam'}}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createFactory } from 'react';
 import { MainWrapper } from '../../modules/start-page/startPage.sc.js';
 import AppBar from './AppBar';
 import Card from '../card/Card';
@@ -20,6 +20,7 @@ interface Car {
 
 function HomePage(): JSX.Element {   
     const { loading, error, data } = useQuery(GET_POSTS);
+  
     const cars: [Car] = data ? data.posts : [];
     const memoriesValue = {
         farmCars:  {

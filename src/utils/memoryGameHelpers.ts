@@ -31,22 +31,28 @@ const shuffle = (array: GeneratedImage[]): GeneratedImage[] => {
          
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const generateData = function(images: MemoryImage[]): GeneratedImage[] {
+const generateData = (images: MemoryImage[]): GeneratedImage[] => {
     let imagesArray: GeneratedImage[] = [];
     images.forEach((imgData) => {
         imagesArray = [...imagesArray, { newId: `${imgData._id}_1`, ...imgData }];
         imagesArray = [...imagesArray, { newId: `${imgData._id}_2`, ...imgData }];
     });
-   console.log(imagesArray);
-   const random = shuffle(imagesArray)
-   console.log(random)
-    return shuffle(imagesArray);
+    return imagesArray;
 }
 
 
 export const prepareRandomCards = (images : MemoryImage[]): GeneratedImage[] => {
     const dataArray = generateData(images);
     return shuffle(dataArray)
+}
+
+export const checkIfPair = (selectedCards: string[]): boolean => {
+    const firstImgId = selectedCards[0].slice(0, -2);
+    console.log(firstImgId)
+    const secondImgId = selectedCards[1].slice(0,-2);
+    console.log(secondImgId)
+    console.log(firstImgId === secondImgId)
+    return firstImgId === secondImgId;
 }
 
  

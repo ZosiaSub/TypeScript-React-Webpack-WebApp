@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { HomeContainerStyled } from '../home-page/HomePage.sc.js';
 import { Grid, CircularProgress } from '@material-ui/core/';
 import MemoriesContext from '../../Context/MemoriesContext';
@@ -17,17 +17,15 @@ interface Car {
     const carsData = useContext(MemoriesContext);
     const { loading, data } = carsData.farmCars;
     
-    const cards = () => {
-        if (data && data.length) {
-            return (
-                data.map((car: Car) => (
-                    <Card cardData={car} key={car._id} />
-                ))
-            )
-        }
+    const generateStartCard = () => {
+        const car = data && data[0];
+        return (
+            <Card cardData={car} key={car._id} />
+        )
     }
+
    
-    const content = loading ? <CircularProgress /> : cards();
+    const content = loading ? <CircularProgress /> : generateStartCard();
     return (
        <HomeContainerStyled>
         <Grid
