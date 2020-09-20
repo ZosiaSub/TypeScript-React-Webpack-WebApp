@@ -4,35 +4,37 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import MemoryBoard from './GameBoard';
 import { Link } from 'react-router-dom';
 
+interface Car {
+    img: {
+        contentType: string;
+        data: string;
+    };
+    title: string;
+    _id: string;
+    src: string;
+}
+
+
 interface GameProps {
-    location:{
+    location: {
         state: {
-            cars: {
-                data: [
-                    {
-                        img: {
-                            contentType: string,
-                            data: string,
-                        },
-                        title: string,
-                    }
-                ]
-            }
+            cars: [Car];
         }
     }         
 }
+
 
 function MemoryGame(props: GameProps) :JSX.Element {
     console.log(props)
     return (
         <MainWrapper>
-            <Link to='/' params={{ data: 'test dupa'}}>
+            <Link to='/' params={{ data: 'test coś tam'}}>
                 <ArrowBackIosIcon 
                     color="secondary"
                     style={{ fontSize: 40 }}
                 />
             </Link>
-            <MemoryBoard images={props.location.state.cars.data}/>
+            <MemoryBoard images={props.location.state.cars}/>
         </MainWrapper>
     )
 }

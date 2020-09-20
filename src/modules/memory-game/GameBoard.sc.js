@@ -11,8 +11,24 @@ export const BoardWrapper = styled.div`
     border-radius: 12px;
 `
 
-export const Board= styled.div`
+export const Board = styled.div`
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
     flex-wrap: wrap;
+`
+
+export const MemoryImageBox = styled.div`
+    height: 200px;
+    width: 200px;
+    border: 2px solid #94c6ac;
+    border-radius: 10px;
+`
+
+export const MemoryImage = styled.img`
+    height: 196px;
+    width: 196px;
+    border-radius: 10px;
 `

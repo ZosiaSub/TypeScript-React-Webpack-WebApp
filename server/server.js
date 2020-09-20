@@ -20,7 +20,6 @@ app.use(cors(corsOptions));
 
 // #7 Use the Express application as middleware in Apollo server
 server.applyMiddleware({ app });
-console.log('INNNN')
 
 // #8 Set the port that the Express application will listen to
 app.listen({ port: 3000 }, () => {

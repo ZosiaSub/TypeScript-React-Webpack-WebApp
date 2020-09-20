@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
-import img from '../../sources/images/IMG_6747.jpg';
 import { littleGlow, moveInLeft } from '../animations/animations.sc';
 import { Link } from 'react-router-dom';
+import Constants from '../../sources/constants.ts';
 
 export const MainWrapper = styled.div`
     margin: 0;
@@ -34,7 +34,7 @@ export const Header = styled.header`
             to right bottom,
             rgba(153, 255, 187, 0.4),
             rgba(0, 204, 109, 0.7)),
-    url(${img});
+    url(${Constants.images.startPageImage});
     background-size: cover;
     background-position: top;
     clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
@@ -50,8 +50,8 @@ export const Header = styled.header`
 
 export const Logobox = styled.div`
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 1%;
+    left: 1%;
 `
 
 export const Logo = styled.img`

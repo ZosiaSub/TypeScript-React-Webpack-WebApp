@@ -7,11 +7,7 @@ const cache = new InMemoryCache();
 const link = new HttpLink({
     uri: 'http://localhost:3000/graphql'
 })
-// const corsOptions = {
-//   origin: "http://localhost:8080",
-//   credentials: true
-// };
-console.log("APOLLO")
+
 
 const client = new ApolloClient({
   link,

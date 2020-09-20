@@ -16,8 +16,7 @@ interface Car {
  function HomeContainer() :JSX.Element {
     const carsData = useContext(MemoriesContext);
     const { loading, data } = carsData.farmCars;
-
-    console.log(data)
+    
     const cards = () => {
         if (data && data.length) {
             return (

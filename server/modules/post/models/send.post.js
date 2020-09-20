@@ -15,10 +15,10 @@ mongoose.connection.on('open', function () {
   console.error('mongo is open');
     // store an img in mongo
     const a = new Post;
-    a.title = 'First post'
-    a.content = 'This is the first post content'
+    a.title = 'pojazd rolniczy'
+    a.content = 'pojazd rolniczy'
     a.img.data = fs.readFileSync(`${imgPath}3.jpg`).toString('base64');
-    a.img.contentType = 'image/jpg';
+    a.img.contentType = 'image/png';
     a.save(function (err, a) {
       if (err) throw err;
 
