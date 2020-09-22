@@ -10,6 +10,7 @@
     "lib": ["es6", "dom"],
     "noImplicitAny": false,
     "noImplicitThis": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "typeRoots": ["./node_modules/@types", "./custom_typings"]
   }
 }

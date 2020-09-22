@@ -1,23 +1,8 @@
 import styled, { keyframes } from 'styled-components';
-import img from '../../sources/images/IMG_6747.jpg';
-import { littleGlow } from '../animations/animations.sc';
+import { littleGlow, moveInLeft } from '../animations/animations.sc';
 import { Link } from 'react-router-dom';
+import Constants from '../../sources/constants.ts';
 
-const moveInLeft = keyframes`
-    0% {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-
-    80% {
-        transform: translateX(10px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-`
 export const MainWrapper = styled.div`
     margin: 0;
     padding: 0;
@@ -49,7 +34,7 @@ export const Header = styled.header`
             to right bottom,
             rgba(153, 255, 187, 0.4),
             rgba(0, 204, 109, 0.7)),
-    url(${img});
+    url(${Constants.images.startPageImage});
     background-size: cover;
     background-position: top;
     clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
@@ -65,11 +50,11 @@ export const Header = styled.header`
 
 export const Logobox = styled.div`
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 1%;
+    left: 1%;
 `
 
-export const Logo =styled.img`
+export const Logo = styled.img`
     max-height: 180px;
     :hover {
     animation: ${littleGlow} 1s ease-out;

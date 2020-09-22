@@ -4,13 +4,18 @@
     "plugins": [
       "@typescript-eslint",
       "react",
-      "eslint-plugin-react"
+      "eslint-plugin-react",
+      "eslint-plugin-import",
+      "jest"
     ],
     "extends": [
       "eslint:recommended",
       "plugin:@typescript-eslint/eslint-recommended",
       "plugin:@typescript-eslint/recommended",
-      "plugin:react/recommended"
+      "plugin:react/recommended",
+      "plugin:node/recommended",
+      "plugin:jest/recommended",
+      "plugin:jest/style"
     ],
     "rules": { 
         "no-console": 2,
@@ -19,7 +24,21 @@
             { "allowTypedFunctionExpressions": true }
           ],
         "react/jsx-uses-react": "error",
-        "react/jsx-uses-vars": "error" 
+        "react/jsx-uses-vars": "error",
+        "node/exports-style": ["error", "module.exports"],
+        "node/file-extension-in-import": ["error", "always"],
+        "node/prefer-global/buffer": ["error", "always"],
+        "node/prefer-global/console": ["error", "always"],
+        "node/prefer-global/process": ["error", "always"],
+        "node/prefer-global/url-search-params": ["error", "always"],
+        "node/prefer-global/url": ["error", "always"],
+        "node/prefer-promises/dns": "error",
+        "node/prefer-promises/fs": "error",
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error" 
     },
     "settings": {
         "react": {
@@ -44,6 +63,7 @@
       "parserOptions": {
         "ecmaFeatures": {
           "jsx": true
-        }
+        },
+        "ecmaVersion": 2020
       }
   }
