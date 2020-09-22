@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BoardWrapper, Board, MemoryImageBox, MemoryImage } from './GameBoard.sc.js';
 import { prepareRandomCards, checkIfPair } from '../../utils/memoryGameHelpers'
 import { createGlobalStyle } from 'styled-components';
+import GameResults from './game-results/GameResults';
 
 interface Image {
     img: {
@@ -31,38 +32,39 @@ interface MemoryBoardProps {
 function MemoryBoard(props: MemoryBoardProps): 
 JSX.Element {
     const boardElements: CardImage[] = prepareRandomCards(props.images);
-    console.log("PROPS  ,", props.images)
     const [cards, setCards] = useState(boardElements);
     const [selectedCards, setSelectedCards] = useState<string[]>([]);
     const [pairs, setPairs] = useState<string[]>([]);
 
     const clearSelectedCards = () => setTimeout(() =>{
-        console.log(3333333333)
         setSelectedCards([]);
-    }, 1000)
+    }, 700)
 
     const onClickHandler = (event: { target: { id: string } }) => {
         const card: string = event.target.id;
+
         if (selectedCards.includes(card)) return;
+
         if(selectedCards.length === 2) return;
         const updatedCards = [...selectedCards, card];
         setSelectedCards(updatedCards);
+
         if(selectedCards.length === 1) {
             const isAPair = checkIfPair(updatedCards);
+
             if (isAPair) {
                 setTimeout(() => {
                       setPairs(pairs.concat(updatedCards));setSelectedCards([]);
-                }, 500);
+                }, 100);
             } 
             !isAPair && clearSelectedCards();
         }
 
     }
-console.log(1111111111, selectedCards);
-
 
     return (
         <BoardWrapper>
+            <GameResults />
             <Board>
                 {cards.map(image => (
                     <MemoryImageBox key={image.newId} isAPair={pairs.includes(image.newId)}>
@@ -72,6 +74,7 @@ console.log(1111111111, selectedCards);
                             id={image.newId}
                             onClick={onClickHandler}
                             isSelected={selectedCards.includes(image.newId)}
+                            draggable="false"
                         />
                     </MemoryImageBox>
                 ))}

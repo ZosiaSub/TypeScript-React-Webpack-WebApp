@@ -25,6 +25,7 @@ export const MemoryImageBox = styled.div`
     width: 200px;
     border: 2px solid #94c6ac;
     border-radius: 10px;
+    background-color: #aee8cb;
     opacity: ${props => props.isAPair ? 0 : 1}; 
 `
 
@@ -34,4 +35,5 @@ export const MemoryImage = styled.img`
     border-radius: 10px;
     opacity: ${props => props.isSelected ? 1 : 0}; 
     cursor: pointer;
+    pointer-events: auto;
 `

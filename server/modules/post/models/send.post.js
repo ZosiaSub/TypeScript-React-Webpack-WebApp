@@ -9,7 +9,9 @@ const Post = require('./post.model');
 var imgPath = 'src/sources/images/pojazd';
 
 // connect to mongo
-mongoose.connect('mongodb+srv://dbUser:Mongodb84@cluster0-0hgq3.mongodb.net/test?retryWrites=true&w=majority', {
+//  mongodb+srv://dbUser:Mongodb84@cluster0-0hgq3.mongodb.net/test?retryWrites=true&w=majority
+var mongoUrl= 'mongodb%2Bsrv%3A%2F%2FdbUser%3AMongodb84%40cluster0-0hgq3.mongodb.net%2Ftest%3FretryWrites%3Dtrue%26w%3Dmajority'
+mongoose.connect(mongoUrl, {
     useNewUrlParser: true, useUnifiedTopology: true 
 });
 

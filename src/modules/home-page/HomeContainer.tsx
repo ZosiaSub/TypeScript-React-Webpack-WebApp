@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { HomeContainerStyled } from '../home-page/HomePage.sc.js';
 import { Grid, CircularProgress } from '@material-ui/core/';
 import MemoriesContext from '../../Context/MemoriesContext';
@@ -26,14 +26,15 @@ interface Car {
 
    
     const content = loading ? <CircularProgress /> : generateStartCard();
+    
     return (
        <HomeContainerStyled>
-        <Grid
-            container
-            spacing={3}
-            direction="row"
-            justify="center"
-        >
+            <Grid
+                container
+                spacing={3}
+                direction="row"
+                justify="center"
+            >
             {content}   
         </Grid>      
     </HomeContainerStyled>   

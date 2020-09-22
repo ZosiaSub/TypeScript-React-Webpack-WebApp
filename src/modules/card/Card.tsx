@@ -37,7 +37,6 @@ export default function CardComponent(props: CardProps): JSX.Element {
   const classes = useStyles();
   const farmCarsData = useContext(MemoriesContext);
   const farmCars = farmCarsData.farmCars.data;
-  console.log('FARM CARS ,', farmCars)
 
   return (
     <Grid item xs={12} sm={6} md={3}>
